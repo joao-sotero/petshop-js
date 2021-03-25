@@ -4,6 +4,9 @@ const data = moment().locale('pt').format('dddd, hA');
 
  const nomePetshop = "I love pet";
 
+ var nomepet = 'nick';
+
+ //array de objetos
  let pets = [
      {
         nome: 'Tobby',
@@ -15,7 +18,7 @@ const data = moment().locale('pt').format('dddd, hA');
         tutor: 'Sotero',
         vacinado: false,
         servicos: ['banho']
-        //console.log(moment().format("dd/MM/yyyy HH-mm"))   
+      
      },
     {
         nome: 'laika',
@@ -47,7 +50,7 @@ const listarPets = () => {
         console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
     }
 }
-listarPets();
+//listarPets();
 
 // vacina por pet
 const vacinarPet = () => {
@@ -62,10 +65,9 @@ const vacinarPet = () => {
     }
   }
 }
-var love = 'laika';
-vacinarPet(love);
+//vacinarPet(love);
 
-/*
+/* forma para vacinar pet depois
 const vacinarPet = (pet) => {
     if(pet.vacinado == true){ 
         console.log(`O pet ${pet.nome} já está vacinado`);
@@ -89,10 +91,11 @@ const campanhaVacina = () => {
         }
     }
     console.log(`${contagem} pets foram vacinados nessa campanha!`);
+    console.log()
 }
-campanhaVacina();
+//campanhaVacina();
 
-// adiciona novo cliente
+// melhor forma de add clientes
 /*
 const addClient = (
     nome,
@@ -120,24 +123,24 @@ const addClient = (
   };
   addclient(nome, tipo, idade, raca, peso, tutor, contato, vacinado, servicos);
 */
+
+//add cliente novo
 const addClient = () => {
     pets.push({nome: 'nick', tipo: 'cachorro', idade: 12, raca: 'poodle', peso: 10, 
     contato: '(81) 9 99712863', tutor: 'sotero', vacinado: false, servicos: [] });
     console.log(pets[3]);
+    console.log()
 }
 addClient();
 
 //serviços de petshop
-
-
  const darBanhoPet = (nome) => {
     for (let pet of pets) {
       if (pet.nome === nome) {
         pet.servicos.push('banho');
         console.log(`${pet.nome} está de banho tomado`);
-        console.log(
-          `Serviço realizado na data: ${data}`
-        );
+        console.log(`Serviço realizado na data: ${data}`);
+        console.log()
       }
     }
   };
@@ -147,9 +150,8 @@ addClient();
       if (pet.nome === nome) {
         pet.servicos.push('tosa');
         console.log(`${pet.nome} está com o cabelinho na régua`);
-        console.log(
-          `Serviço realizado na data: ${data}`
-        );
+        console.log(`Serviço realizado na data: ${data}`);
+        console.log()
       }
     }
   };
@@ -159,15 +161,14 @@ addClient();
       if (pet.nome === nome) {
         pet.servicos.push('corte de unhas');
         console.log(`${pet.nome} está de unhas aparadas`);
-        console.log(
-          `Serviço realizado na data: ${data}`
-        );
+        console.log(`Serviço realizado na data: ${data}`);
+        console.log()
       }
     }
   };
 
-  darBanhoPet('nick');
-tosarPet('nick');
-apararUnhasPet('nick');
+darBanhoPet(nomepet);
+tosarPet(nomepet);
+apararUnhasPet(nomepet);
 
 console.log(pets[3]);
