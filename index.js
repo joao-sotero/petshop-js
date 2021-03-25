@@ -10,7 +10,7 @@
         contato: '(81)9 9971-2863',
         tutor: 'Sotero',
         vacinado: false,
-        servicos: 'banho'
+        servicos: ['banho']
     },
     {
         nome: 'laika',
@@ -32,7 +32,7 @@
         contato: '(81)9 9971-2863',
         tutor: 'Sotero',
         vacinado: false,
-        servicos: 'banho'
+        servicos: ['banho']
     }
 ];
 
@@ -46,7 +46,7 @@ listarPets();
 
 // vacina por pet
 
-var love = 'laika';
+
 const vacinarPets = () => {
     for(let pet of pets ){
         if(pet.nome == love  ){
@@ -59,7 +59,21 @@ const vacinarPets = () => {
     }
 }
 }
-vacinarPets();
+/*
+const vacinarPets = (pet) => {
+    
+
+    if(pet.vacinado == true){ 
+        console.log(`O pet ${pet.nome} já está vacinado`);
+    }
+    else{
+        pet.vacinado = true;
+        console.log(`O pet ${pet.nome} foi vacinado`);
+    }
+}*/
+
+var love = 'laika';
+vacinarPets(love);
 
 //vacina todos os pets
 var contagem = 0;
@@ -77,3 +91,13 @@ const campanhaVacina = () => {
 campanhaVacina();
 
 
+// adiciona novo cliente
+
+const addClient = () => {
+    pets.push({nome: 'nick', tipo: 'cachorro', idade: 12, raca: 'poodle', peso: 10, 
+    contato: '(81) 9 99712863', tutor: 'sotero', vacinado: false, servicos: ['null'] });
+
+    console.log(pets[3]);
+}
+
+addClient();
