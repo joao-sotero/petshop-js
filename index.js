@@ -36,17 +36,15 @@
     }
 ];
 
+//listar todos os pets
 const listarPets = () => {
     for(let pet of pets ){
         console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
     }
 }
-
 listarPets();
 
 // vacina por pet
-
-
 const vacinarPets = () => {
     for(let pet of pets ){
         if(pet.nome == love  ){
@@ -57,12 +55,13 @@ const vacinarPets = () => {
    console.log(`${pet.nome} foi vacinado(a)`); 
         }
     }
+  }
 }
-}
+var love = 'laika';
+vacinarPets(love);
+
 /*
 const vacinarPets = (pet) => {
-    
-
     if(pet.vacinado == true){ 
         console.log(`O pet ${pet.nome} já está vacinado`);
     }
@@ -70,10 +69,9 @@ const vacinarPets = (pet) => {
         pet.vacinado = true;
         console.log(`O pet ${pet.nome} foi vacinado`);
     }
-}*/
-
-var love = 'laika';
-vacinarPets(love);
+}
+//vacinarPet(pets[2]);
+*/
 
 //vacina todos os pets
 var contagem = 0;
@@ -86,18 +84,12 @@ const campanhaVacina = () => {
     }
     console.log(`${contagem} pets foram vacinados nessa campanha!`);
 }
-
-
 campanhaVacina();
 
-
 // adiciona novo cliente
-
 const addClient = () => {
     pets.push({nome: 'nick', tipo: 'cachorro', idade: 12, raca: 'poodle', peso: 10, 
     contato: '(81) 9 99712863', tutor: 'sotero', vacinado: false, servicos: ['null'] });
-
     console.log(pets[3]);
 }
-
 addClient();
