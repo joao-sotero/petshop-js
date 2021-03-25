@@ -9,7 +9,7 @@
         peso: 12,
         contato: '(81)9 9971-2863',
         tutor: 'Sotero',
-        Vacinado: false,
+        vacinado: false,
         servicos: 'banho'
     },
     {
@@ -20,7 +20,7 @@
         peso: 12,
         contato: '(81)9 9971-2863',
         tutor: 'Sotero',
-        Vacinado: false,
+        vacinado: true,
         servicos: ['banho', 'tosa']
     },
     {
@@ -31,16 +31,36 @@
         peso: 6,
         contato: '(81)9 9971-2863',
         tutor: 'Sotero',
-        Vacinado: false,
+        vacinado: false,
         servicos: 'banho'
     }
 ];
 
 const listarPets = () => {
     for(let pet of pets ){
-        console.log(`O nome do meu pet é ${pets.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
+        console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
     }
 }
 
 listarPets();
- //console.log(pets);
+
+// vacina por pet
+
+var love = 'laika';
+const vacinarPets = () => {
+    for(let pet of pets ){
+        if(pet.nome == love  ){
+            if(pet.vacinado == true){
+                console.log(`${pet.nome} já está vacinado(a)`);
+            }else{
+            pet.vacinado = true;
+   console.log(`${pet.nome} foi vacinado(a)`); 
+        }
+    }
+}
+}
+vacinarPets();
+
+
+
+
