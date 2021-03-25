@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joao-sotero/petshop-js/issues"
   },
-  "homepage": "https://github.com/joao-sotero/petshop-js#readme"
+  "homepage": "https://github.com/joao-sotero/petshop-js#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }
