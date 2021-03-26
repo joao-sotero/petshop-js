@@ -66,7 +66,6 @@ const vacinarPet = (nomepet) => {
 //vacinarPet(nomepet);
 
 //vacina todos os pets
-
 const campanhaVacina = () => {
     let contagem = 0;
     for(let pet of pets ){
@@ -78,9 +77,36 @@ const campanhaVacina = () => {
     console.log(`${contagem} pets foram vacinados nessa campanha!`);
     console.log()
 }
-campanhaVacina();
+//campanhaVacina();
 
-
+// melhor forma de add clientes
+/*
+const addClient = (
+    nome,
+    tipo,
+    idade,
+    raca,
+    peso,
+    tutor,
+    contato,
+    vacinado,
+    servicos
+  ) => {
+    pets.push = {
+      nome: nome,
+      tipo: tipo,
+      idade: idade,
+      raca: raca,
+      peso: peso,
+      tutor: tutor,
+      contato: contato,
+      vacinado: vacinado,
+      servicos: servicos,
+    };
+    console.log(pets);
+  };
+  addclient(nome, tipo, idade, raca, peso, tutor, contato, vacinado, servicos);
+*/
 //add cliente novo
 const addClient = () => {
     pets.push({nome: 'nick', tipo: 'cachorro', idade: 12, raca: 'poodle', peso: 10, 
@@ -124,8 +150,7 @@ const addClient = () => {
     }
   };
 
-//darBanhoPet(nomepet);
-//tosarPet(nomepet);
-//apararUnhasPet(nomepet);
-
+darBanhoPet(nomepet);
+tosarPet(nomepet);
+apararUnhasPet(nomepet);
 //console.log(pets[3]);
