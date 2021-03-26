@@ -50,6 +50,7 @@ const listarPets = () => {
 //listarPets();
 
 // vacina por pet
+var contagem = 0;
 const vacinarPet = (nomepet) => {
   for (let pet of pets) {
     if (pet.nome == nomepet) {
@@ -58,6 +59,7 @@ const vacinarPet = (nomepet) => {
       } else {
         pet.vacinado = true;
         console.log(`${pet.nome} foi vacinado(a)`);
+        contagem++;
       }
     }
   }
@@ -66,17 +68,13 @@ const vacinarPet = (nomepet) => {
 
 //vacina todos os pets
 const campanhaVacina = () => {
-  let contagem = 0;
   for (let pet of pets) {
-    if (!pet.vacinado) {
-      pet.vacinado = true;
-      contagem++;
-    }
+    vacinarPet(pet.nome)    
   }
   console.log(`${contagem} pets foram vacinados nessa campanha!`);
   console.log()
 }
-//campanhaVacina();
+campanhaVacina();
 
 //add cliente novo
 const addClient = () => {
@@ -136,7 +134,7 @@ const apararUnhasPet = (nome) => {
   }
 };
 
-darBanhoPet(nomepet);
-tosarPet(nomepet);
-apararUnhasPet(nomepet);
+//darBanhoPet(nomepet);
+//tosarPet(nomepet);
+//apararUnhasPet(nomepet);
 //console.log(pets[3]);
