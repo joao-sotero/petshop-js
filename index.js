@@ -7,15 +7,17 @@ var nomepet = 'leka';
 let pets = bancoDados.pets;
 
 //buscar pet por nome
-const buscarPet = pets.find(cao => cao.nome === nomepet);
+const buscarPet = pets.find(pet => pet.nome === nomepet);
 
 //listar todos os pets
 const listarPets = () => {
   for (let pet of pets) {
-    console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca}`);
+    (pet.vacinado)?console.log(`O nome do meu pet é ${pet.nome}, '${pet.idade}, ${pet.tipo}, ${pet.raca} e está vacinado `):
+    console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca} e não está vacinado `)
+
   }
 }
-//listarPets();
+listarPets();
 
 // vacina por pet
 
