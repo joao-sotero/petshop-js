@@ -17,23 +17,22 @@ const listarPets = () => {
 
   }
 }
-listarPets();
+//listarPets();
 
 // vacina por pet
 
-const vacinarPet = nomepet => {
-  for (let pet of pets) {
-    if (pet.nome == nomepet) {
+const vacinarPet = () => {
+ let pet = buscarPet;
       if (!pet.vacinado) {
         pet.vacinado = true;
         console.log(`${pet.nome} foi vacinado(a)`);
       } else {
-        console.log(`${pet.nome} já está vacinado(a)`);
+        console.log(`${pet.nome} já estava vacinado(a)`);
       }
     }
-  }
-}
-//vacinarPet(nomepet);
+  
+
+vacinarPet();
 
 //vacina todos os pets  corrigir
 const campanhaVacina = () => {
@@ -79,7 +78,7 @@ const darBanhoPet = () => {
 };
 
 const tosarPet = (nome) => {
-  let pet = buscarPet
+  let pet = buscarPet;
   pet.servicos.push({
     'serviço': 'tosar',
     'data': moment().format('DD-MM-YYYY')
@@ -89,7 +88,7 @@ const tosarPet = (nome) => {
 };
 
 const apararUnhasPet = (nome) => {
-  let pet = buscarPet
+  let pet = buscarPet;
   pet.servicos.push({
     'serviço': 'aparar unhas',
     'data': moment().format('DD-MM-YYYY')
@@ -104,7 +103,7 @@ const atenderCliente = (pet, servico) => {
 
   console.log('Tchau, até mais!');
 }
-atenderCliente(buscarPet, tosarPet);
+//tenderCliente(buscarPet, tosarPet);
 
 //darBanhoPet();
 //tosarPet(nomepet);
