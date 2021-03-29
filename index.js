@@ -6,10 +6,8 @@ bancoDados = JSON.parse(bancoDados);
 
 var nomepet = 'tobby';
 
-
 //buscar pet por nome
 const buscarPet = bancoDados.pets.find(pet => pet.nome === nomepet);
-
 
 ///atualizar banco de dados
 const atualizarBanco = () => {
@@ -19,41 +17,60 @@ const atualizarBanco = () => {
 
 //listar todos os pets
 const listarPets = () => {
-  for (let pet of bancoDados.pets) {
+  bancoDados.pets.forEach(function (pet) {
     (pet.vacinado) ? console.log(`O nome do meu pet é ${pet.nome}, '${pet.idade}, ${pet.tipo}, ${pet.raca} e está vacinado `) :
       console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca} e não está vacinado `)
-
-  }
+  })
 }
 //listarPets();
 
-// vacina por pet
+//vacina por pet
 const vacinarPet = () => {
   let pet = buscarPet;
   if (!pet.vacinado) {
     pet.vacinado = true;
     console.log(`${pet.nome} foi vacinado(a)`);
+    atualizarBanco();
   } else {
     console.log(`${pet.nome} já estava vacinado(a)`);
   }
 }
 //vacinarPet();
 
-//vacina todos os pets  corrigir so vacina leka
 const campanhaVacina = () => {
   var contagem = 0;
-  for (let pet of bancoDados.pets) {
+  bancoDados.pets.map(function (pet) {
     if (!pet.vacinado) {
-      /// pet.vacinado = true //gambiarra ajeitar urgente
+      pet.vacinado = true;
       console.log(pet.nome)
-      vacinarPet(pet.nome);
+      //vacinarPet(pet.nome);// so ta vaciando quem ta no nomepet
       contagem++
+      atualizarBanco();
     }
-  }
+  })
   console.log(`${contagem} pets foram vacinados nessa campanha!`);
   console.log()
 };
 //campanhaVacina();
+
+
+const filtrarTipoPet = (tipo) => {
+   bancoDados.pets.filter(function(pet) {
+   if(pet.tipo === tipo){console.log(pet.nome)}
+  })
+}
+//filtrarTipoPet("cachorro");
+
+const clientPrimeium = () => {
+  const contServ = bancoDados.pets[1].servicos
+   pet.servicos.reduce(function(acumula, maisUm ){  
+    return acumula + maisUm;
+    console.log(acumula)
+});
+}
+console.log(bancoDados.pets.servicos)
+//clientPrimeium()
+
 
 //add cliente novo
 const addClient = novopet => {
@@ -116,8 +133,6 @@ const atenderCliente = (pet, servico) => {
 }
 
 //tenderCliente(buscarPet, tosarPet);
-
 //darBanhoPet();
 //tosarPet();
 //apararUnhasPet();
-//console.log(buscarPet);
