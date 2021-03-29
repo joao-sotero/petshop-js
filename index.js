@@ -1,17 +1,24 @@
 var moment = require('moment'); //require
-const bancoDados = require("./dadosPet.json")
-const nomePetshop = "I love pet";
+var fs = require('fs'); ///filesystem - modulo nativo
+let bancoDados = fs.readFileSync("./dadosPet.json");
+
+bancoDados = JSON.parse(bancoDados);
 
 var nomepet = 'leka';
 
-let pets = bancoDados.pets;
-
 //buscar pet por nome
-const buscarPet = pets.find(pet => pet.nome === nomepet);
+const buscarPet = bancoDados.pets.find(pet => pet.nome === nomepet);
+
+///atualizar banco de dados
+const atualizarBanco = () => {
+  let petsAtualizado = JSON.stringify(bancoDados, null, 2);
+  fs.writeFileSync('bancoPets.json', petsAtualizado, 'utf-8');
+}
+
 
 //listar todos os pets
 const listarPets = () => {
-  for (let pet of pets) {
+  for (let pet of bancoDados.pets) {
     (pet.vacinado)?console.log(`O nome do meu pet é ${pet.nome}, '${pet.idade}, ${pet.tipo}, ${pet.raca} e está vacinado `):
     console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca} e não está vacinado `)
 
@@ -20,24 +27,23 @@ const listarPets = () => {
 //listarPets();
 
 // vacina por pet
-
 const vacinarPet = () => {
  let pet = buscarPet;
       if (!pet.vacinado) {
         pet.vacinado = true;
         console.log(`${pet.nome} foi vacinado(a)`);
-      } else {
+        } else {
         console.log(`${pet.nome} já estava vacinado(a)`);
       }
     }
   
 
-vacinarPet();
+//vacinarPet();
 
-//vacina todos os pets  corrigir
+//vacina todos os pets  corrigir so vacina leka
 const campanhaVacina = () => {
   var contagem = 0;
-  for (let pet of pets) {
+  for (let pet of bancoDados.pets) {
     if (!pet.vacinado) { // não deixa laika entrar pq ja ta vacinada
       vacinarPet(pet.nome);
       contagem++
@@ -49,22 +55,23 @@ const campanhaVacina = () => {
 //campanhaVacina();
 
 //add cliente novo
-const addClient = () => {
-  pets.push({
-    nome: 'nick',
-    tipo: 'cachorro',
-    idade: 12,
-    raca: 'poodle',
-    peso: 10,
-    contato: '(81) 9 99712863',
-    tutor: 'sotero',
-    vacinado: false,
-    servicos: []
-  });
-  console.log(pets[3]);
-  console.log()
+const addClient = novopet => {
+  bancoDados.pets.push(novopet);
+  atualizarBanco();
+  console.log(bancoDados.pets[3]);
+  console.log();
 }
-//addClient();
+addClient({
+  "nome": "Romarinho",
+    "tipo": "cachorro",
+    "idade": 3,
+    "raca": "American",
+    "peso": 28,
+    "tutor": "Bruno",
+    "contato": "(11) 99999-9999",
+    "vacinado": true,
+    "servicos": []
+});
 
 //serviços de petshop
 const darBanhoPet = () => {
@@ -103,6 +110,7 @@ const atenderCliente = (pet, servico) => {
 
   console.log('Tchau, até mais!');
 }
+
 //tenderCliente(buscarPet, tosarPet);
 
 //darBanhoPet();
