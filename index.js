@@ -53,23 +53,26 @@ const campanhaVacina = () => {
 };
 //campanhaVacina();
 
-
-const filtrarTipoPet = (tipo) => {
+// terminar 
+const filtrarTipoPet = (tipo) => { 
    bancoDados.pets.filter(function(pet) {
    if(pet.tipo === tipo){console.log(pet.nome)}
   })
 }
-//filtrarTipoPet("cachorro");
 
-const clientPrimeium = () => {
-  const contServ = bancoDados.pets[1].servicos
-   pet.servicos.reduce(function(acumula, maisUm ){  
-    return acumula + maisUm;
-    console.log(acumula)
+//filtrarTipoPet("cachorro");
+const pet = bancoDados.pets;
+const clientPrimeium = (pet) => {
+  const contServ = pet.servicos.map(servicos => 1)
+  console.log(contServ)
+   let test = pet.servicos.reduce((acumula, maisUm ) => { 
+     return acumula + maisUm;
+
 });
-}
-console.log(bancoDados.pets.servicos)
-//clientPrimeium()
+console.log(`${pet.servicos}, ${test} `)
+ }
+ 
+clientPrimeium(pet[1])
 
 
 //add cliente novo
