@@ -1,7 +1,7 @@
 {
   "pets": [
     {
-      "nome": "Tobby",
+      "nome": "tobby",
       "tipo": "cachorro",
       "idade": 12,
       "raca": "vira-lata",
