@@ -20,13 +20,16 @@
       "contato": "(81)9 9971-2863",
       "tutor": "Sotero",
       "vacinado": true,
-      "servicos": [{
-        "nome": "Vacina",
-        "data": "March 29th 2021, 11:48:50 am"
-      },{
-      "nome": "Vacina",
-      "data": "March 29th 2021, 11:48:50 am"
-    }]
+      "servicos": [
+        {
+          "nome": "Vacina",
+          "data": "March 29th 2021, 11:48:50 am"
+        },
+        {
+          "nome": "Vacina",
+          "data": "March 29th 2021, 11:48:50 am"
+        }
+      ]
     },
     {
       "nome": "leka",

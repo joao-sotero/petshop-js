@@ -7,7 +7,13 @@ bancoDados = JSON.parse(bancoDados);
 var nomepet = 'tobby';
 
 //buscar pet por nome
-const buscarPet = bancoDados.pets.find(pet => pet.nome === nomepet);
+const buscarPet = (nomepet) => {
+  let petEncontrado = bancoDados.pets.find((pet) =>{
+    return pet.nome == nomepet;
+  }); 
+    return petEncontrado?petEncontrado:`Nenhum pet encontrado com nome ${nomepet}`;
+}
+
 
 ///atualizar banco de dados
 const atualizarBanco = () => {
@@ -25,8 +31,8 @@ const listarPets = () => {
 //listarPets();
 
 //vacina por pet
-const vacinarPet = () => {
-  let pet = buscarPet;
+const vacinarPet = (nome) => {
+  let pet = buscarPet(nome);
   if (!pet.vacinado) {
     pet.vacinado = true;
     console.log(`${pet.nome} foi vacinado(a)`);
@@ -35,18 +41,18 @@ const vacinarPet = () => {
     console.log(`${pet.nome} já estava vacinado(a)`);
   }
 }
-//vacinarPet();
+//vacinarPet(nomepet);
 
 const campanhaVacina = () => {
   var contagem = 0;
   bancoDados.pets.map(function (pet) {
     if (!pet.vacinado) {
-      pet.vacinado = true;
       console.log(pet.nome)
-      //vacinarPet(pet.nome);// so ta vaciando quem ta no nomepet
+     // pet.vacinado = true;
+      vacinarPet(pet.nome);
       contagem++
-      atualizarBanco();
     }
+    return pet;
   })
   console.log(`${contagem} pets foram vacinados nessa campanha!`);
   console.log()
@@ -54,25 +60,51 @@ const campanhaVacina = () => {
 //campanhaVacina();
 
 // terminar 
-const filtrarTipoPet = (tipo) => { 
-   bancoDados.pets.filter(function(pet) {
-   if(pet.tipo === tipo){console.log(pet.nome)}
-  })
+const filtrarTipoPet = (tipo) => {
+  bancoDados.pets.filter(function (pet) {
+    return pet.tipo === tipo
+  });
+
+    return petEncontrado
 }
+/*
+const filtrarEspeciePet = (especiePet) => {
+  const especiesFiltradas = pets.filter(pet => pet.especie == especiePet)
+  console.log(especiesFiltradas)
+}*/
 
 //filtrarTipoPet("cachorro");
-const pet = bancoDados.pets;
+
 const clientPrimeium = (pet) => {
   const contServ = pet.servicos.map(servicos => 1)
-  console.log(contServ)
-   let test = pet.servicos.reduce((acumula, maisUm ) => { 
-     return acumula + maisUm;
+  if (contServ != 0) {
+    let test = contServ.reduce((acumula, maisUm) => {
+      return acumula + maisUm;
+    })
+    switch (test) {
+      case 1:
+        console.log(`Você realizou ${test} serviço(s)!`)
+        console.log("Realize mais um serviço para obter 10% de desconto")
+        break
+      case 2:
+        console.log(`Você realizou ${test} serviço(s)!`)
+        console.log("Parabéns você obteve 10% de desconto!")
+        break
+      case 3:
+        console.log(`Você realizou ${test} serviço(s)!`)
+        console.log("Parabéns, você obteve 20% de desconto!")
+        break
+      default:
+        console.log(`Você realizou ${test} serviço(s)!`)
+        console.log("Parabéns, você obteve 30% de desconto!")
+    }
+  } else {
+    console.log("Gostaria de realizar algum serviço?")
+  }
+}
 
-});
-console.log(`${pet.servicos}, ${test} `)
- }
- 
-clientPrimeium(pet[1])
+
+//clientPrimeium(bancoDados.pets[1])
 
 
 //add cliente novo
