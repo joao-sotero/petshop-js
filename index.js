@@ -106,6 +106,7 @@ const clientPrimeium = (pet) => {
 
 
 // const clientePremium = (pet) => {
+  // let {nome} = pet;
 //   let nServicos = pet.servicos.length;
 
 //   if (nServicos > 5) {
@@ -145,7 +146,7 @@ const darBanhoPet = () => {
   atualizarBanco();
   console.log(`${pet.nome} está de banho tomado`);
   console.log()
-};
+}
 
 const tosarPet = () => {
   let pet = buscarPet;
