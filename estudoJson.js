@@ -28,14 +28,25 @@
 // atenderCliente(pets[1]);
 
 //DESESTRUTURAÇÃO
- let pessoa={
-     nome :'iago',
-     idade: 25,
-     prodissao: 'dev',
-     contato: '(11)999999999',
-     habilidades: ['node', 'mysql','javascript', 'html']
- }
+//  let pessoa={
+//      nome :'iago',
+//      idade: 25,
+//      prodissao: 'dev',
+//      contato: '(11)999999999',
+//      habilidades: ['node', 'mysql','javascript', 'html']
+//  }
 
- let {nome, contato} = pessoa;
- console.log(`${nome} - ${contato}`);
- as
+//  let {nome, contato} = pessoa;
+//  console.log(`${nome} - ${contato}`);
+//  as
+
+let turma1 = ['anna', 'joao', 'vitoria', 'igor'];
+let turma2 = ['janaina', 'gustavo', 'adriana', 'isaac'];
+
+let turmasAvanade = [turma1, turma2];
+let turmasAvanade2 = [...turma1, ...turma2]
+turma1.push(...turma2)
+
+console.log(turmasAvanade)
+console.log(turmasAvanade2)
+console.log(turma1)

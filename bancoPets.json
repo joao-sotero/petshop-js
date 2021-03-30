@@ -9,16 +9,7 @@
       "contato": "(81)9 9971-2863",
       "tutor": "Sotero",
       "vacinado": true,
-      "servicos": [
-        {
-          "serviço": "banho",
-          "data": "30-03-2021"
-        },
-        {
-          "nome": "banho",
-          "data": "30-03-2021"
-        }
-      ]
+      "servicos": []
     },
     {
       "nome": "laika",
@@ -29,16 +20,7 @@
       "contato": "(81)9 9971-2863",
       "tutor": "Sotero",
       "vacinado": true,
-      "servicos": [
-        {
-          "nome": "Vacina",
-          "data": "March 29th 2021, 11:48:50 am"
-        },
-        {
-          "nome": "Vacina",
-          "data": "March 29th 2021, 11:48:50 am"
-        }
-      ]
+      "servicos": []
     },
     {
       "nome": "leka",
@@ -49,6 +31,28 @@
       "contato": "(81)9 9971-2863",
       "tutor": "Sotero",
       "vacinado": true,
+      "servicos": []
+    },
+    {
+      "nome": "nick",
+      "tipo": "cachorro",
+      "idade": 12,
+      "raca": "poodle",
+      "peso": 12,
+      "tutor": "João",
+      "contato": "(81) 99971-2863",
+      "vacinado": false,
+      "servicos": []
+    },
+    {
+      "nome": "bio",
+      "tipo": "gato",
+      "idade": 1,
+      "raca": "vira lata",
+      "peso": 1,
+      "tutor": "João",
+      "contato": "(81) 99971-2863",
+      "vacinado": false,
       "servicos": []
     }
   ]
