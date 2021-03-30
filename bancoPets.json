@@ -9,7 +9,16 @@
       "contato": "(81)9 9971-2863",
       "tutor": "Sotero",
       "vacinado": true,
-      "servicos": []
+      "servicos": [
+        {
+          "serviço": "banho",
+          "data": "30-03-2021"
+        },
+        {
+          "nome": "banho",
+          "data": "30-03-2021"
+        }
+      ]
     },
     {
       "nome": "laika",

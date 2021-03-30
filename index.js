@@ -24,8 +24,8 @@ const atualizarBanco = () => {
 //listar todos os pets
 const listarPets = () => {
   bancoDados.pets.forEach(function (pet) {
-    (pet.vacinado) ? console.log(`O nome do meu pet é ${pet.nome}, '${pet.idade}, ${pet.tipo}, ${pet.raca} e está vacinado `) :
-      console.log(`O nome do meu pet é ${pet.nome}, ${pet.idade}, ${pet.tipo}, ${pet.raca} e não está vacinado `)
+    let{nome, idade, tipo, raca, vacinado} = pet
+    console.log(`O nome do meu pet é ${nome}, ${idade}, ${tipo}, ${(vacinado) ? 'vacinado': 'não vacinado'}`)
   })
 }
 //listarPets();
@@ -46,10 +46,12 @@ const vacinarPet = (nome) => {
 const campanhaVacina = () => {
   var contagem = 0;
   bancoDados.pets.map(function (pet) {
-    if (!pet.vacinado) {
-      console.log(pet.nome)
+    let{nome, vacinado} = pet
+    if (!vacinado) {
+     
+      console.log(nome)
      // pet.vacinado = true;
-      vacinarPet(pet.nome);
+      vacinarPet(nome);
       contagem++
     }
     return pet;
@@ -57,7 +59,7 @@ const campanhaVacina = () => {
   console.log(`${contagem} pets foram vacinados nessa campanha!`);
   console.log()
 };
-//campanhaVacina();
+campanhaVacina();
 
 // terminar 
 const filtrarTipoPet = (tipo) => {
@@ -108,11 +110,10 @@ const clientPrimeium = (pet) => {
 // const clientePremium = (pet) => {
   // let {nome} = pet;
 //   let nServicos = pet.servicos.length;
-
 //   if (nServicos > 5) {
-//       console.log(`Olá, ${pet.nome}! Você é um cliente especial e ganhou um descontão!`);
+//       console.log(`Olá, ${nome}! Você é um cliente especial e ganhou um descontão!`);
 //   } else {
-//       console.log(`Olá, ${pet.nome}! Você ainda não tem descontos disponiveis!`);
+//       console.log(`Olá, ${nome}! Você ainda não tem descontos disponiveis!`);
 //   }
 // }
 

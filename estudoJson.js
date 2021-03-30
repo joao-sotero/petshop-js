@@ -38,3 +38,4 @@
 
  let {nome, contato} = pessoa;
  console.log(`${nome} - ${contato}`);
+ as
