@@ -61,11 +61,11 @@ const campanhaVacina = () => {
 
 // terminar 
 const filtrarTipoPet = (tipo) => {
-  bancoDados.pets.filter(function (pet) {
-    return pet.tipo === tipo
-  });
+  let petsEncontrados = bancoDados.pets.filter((pet) => {
+    return pet.tipo == tipoPet;
+});
 
-    return petEncontrado
+return petsEncontrados;
 }
 /*
 const filtrarEspeciePet = (especiePet) => {
@@ -102,9 +102,18 @@ const clientPrimeium = (pet) => {
     console.log("Gostaria de realizar algum serviço?")
   }
 }
-
-
 //clientPrimeium(bancoDados.pets[1])
+
+
+// const clientePremium = (pet) => {
+//   let nServicos = pet.servicos.length;
+
+//   if (nServicos > 5) {
+//       console.log(`Olá, ${pet.nome}! Você é um cliente especial e ganhou um descontão!`);
+//   } else {
+//       console.log(`Olá, ${pet.nome}! Você ainda não tem descontos disponiveis!`);
+//   }
+// }
 
 
 //add cliente novo
